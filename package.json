@@ -1,0 +1,27 @@
+{
+  "name": "voxui",
+  "version": "0.0.1",
+  "description": "User interface for PBX project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mustafa Motiwala",
+  "license": "LGPLv3",
+  "dependencies": {
+    "classie": "^0.1.0",
+    "jade": "^1.5.0",
+    "lodash": "^2.4.1",
+    "mithril": "^0.1.21"
+  },
+  "devDependencies": {
+    "grunt-browserify": "^2.1.4",
+    "grunt-concurrent": "latest",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-jade": "^0.12.0",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-nodemon": "latest"
+  }
+}
