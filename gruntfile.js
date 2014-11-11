@@ -50,21 +50,22 @@ module.exports = function(grunt) {
     browserify: {
       dev: {
         options: {
-          debug: true,
+          browserifyOptions: {
+            debug: true
+          },
           exclude: ['src/main/webapp/javascripts/vendor/**/*.js']
         },
         files:{
-          'src/main/resources/webapp/assets/js/app.js': [ 'src/main/webapp/javascripts/**/*.js' ]
+          'src/main/resources/webapp/assets/js/app.js': [ 'src/main/webapp/javascripts/main.js' ]
         }
       },
       dist: {
         options: {
-          debug: false,
           transform: ['uglifyify'],
           exclude: ['src/main/webapp/javascripts/vendor/**/*.js']
         },
         files: {
-          'src/main/resources/webapp/assets/js/app.js': ['src/main/webapp/javascripts/**/*.js']
+          'src/main/resources/webapp/assets/js/app.js': ['src/main/webapp/javascripts/main.js']
         }
       }
     },
@@ -120,7 +121,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
 
   //Making grunt default to force in order not to break the project.
-  grunt.option('force', true);
+  // grunt.option('force', true);
 
   //Default task(s).
   grunt.registerTask('default', ['jshint', 'concurrent']);

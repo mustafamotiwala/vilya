@@ -1,4 +1,4 @@
-package com.entity5.phonex
+package com.entity5.vilya
 
 /**
  * Created by mabdullah on 4/6/14.
@@ -6,8 +6,8 @@ package com.entity5.phonex
 
 import java.io.File
 
-import com.entity5.phonex.api._
-import com.entity5.phonex.util.ConfigSupport
+import com.entity5.vilya.api._
+import com.entity5.vilya.util.ConfigSupport
 import io.undertow.server.handlers.resource.{FileResourceManager, ClassPathResourceManager}
 import io.undertow.servlet.Servlets.{deployment, defaultContainer, servlet}
 import io.undertow.Handlers.{path, resource}
@@ -21,9 +21,9 @@ object Server extends ConfigSupport {
     val log = LoggerFactory.getLogger(this.getClass)
     sys.props put("org.scalatra.environment", config.getString("run.mode"))
     val classLoader = getClass.getClassLoader
-    val apiServlet = servlet("API Endpoint Servlet", classOf[FreeSwitchServlet]) addMapping "/vilya/*" setAsyncSupported true
+    val apiServlet = servlet("API Endpoint Servlet", classOf[ApplicationServlet]) addMapping "/vilya/*" setAsyncSupported true
 
-    val deploymentInfo = deployment setClassLoader classLoader setContextPath "" setDeploymentName "Vilya API"
+    val deploymentInfo = deployment setClassLoader classLoader setContextPath "" setDeploymentName "Vilya"
     deploymentInfo.addServlet(apiServlet)
     deploymentInfo.addServletContextAttribute("actorSystem", ActorSystem("Vilya"))
     deploymentInfo.getServletContextAttributes.foreach((t) => log.info(s"${t._1} -> ${t._2}"))

@@ -1,4 +1,4 @@
-package com.entity5.phonex.service
+package com.entity5.vilya.service
 
 import java.util.concurrent.TimeUnit
 
@@ -6,8 +6,8 @@ import akka.actor.{ActorSystem, Props}
 import akka.pattern.ask
 import akka.testkit.TestKit
 import akka.util.Timeout
-import com.entity5.phonex.domain.User
-import com.entity5.phonex.util.ConfigSupport
+import com.entity5.vilya.domain.User
+import com.entity5.vilya.util.ConfigSupport
 import org.specs2.mutable._
 import org.specs2.specification.Scope
 

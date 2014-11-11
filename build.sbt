@@ -8,13 +8,13 @@ Revolver.settings
 
 name := "Vilya Framework"
 
-organization := "com.entity5.phonex"
+organization := "com.entity5"
 
 version := "0.1.0-SNAPSHOT"
 
 scalaVersion := "2.11.4"
 
-scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
+scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-language:postfixOps")
 
 val ScalatraVersion = "2.3.0"
 

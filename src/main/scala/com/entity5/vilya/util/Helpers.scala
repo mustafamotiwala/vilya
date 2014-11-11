@@ -1,4 +1,4 @@
-package com.entity5.phonex.util
+package com.entity5.vilya.util
 
 import com.datastax.driver.core.Cluster
 import com.typesafe.config.ConfigFactory
@@ -6,13 +6,6 @@ import org.joda.time.{LocalDate, LocalDateTime}
 import scala.concurrent.blocking
 
 import scala.language.implicitConversions
-
-/**
- * Created with IntelliJ IDEA.
- * User: mabdullah
- * Date: 21/04/14
- *
- */
 
 object DateUtils{
   implicit def joda2java(ld: LocalDate) =  ld.toDate
@@ -34,7 +27,7 @@ trait ConfigSupport {
   protected val config = ConfigFactory.load()
 }
 
-object PhoneXDb extends ConfigSupport{
+object DatabaseSupport extends ConfigSupport{
 
   lazy val cluster = Cluster.builder
     .addContactPoint(config.getString("database.host"))
